@@ -1,10 +1,8 @@
-import './App.css';
+import ExpenseItem from './components/ExpenseItem'
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>Thanush</h1>
-    </div>
+    <ExpenseItem></ExpenseItem>
   );
 }
 
