@@ -4,8 +4,8 @@ import './NewExpense.css'
 function NewExpense(props) {
     const saveExpenseDataHandler = (enteredExpenseDate) => {
         const expenseData = {
-            ...enteredExpenseDate,
-            id: Math.random().toString()
+            id: Math.random().toString(),
+            ...enteredExpenseDate
         }
         // console.log(expenseData);
         props.onSaveExpenseData(expenseData);
