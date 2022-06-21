@@ -1,5 +1,7 @@
+import ExpenseFilter from "./components/ExpenseFilter";
 import Expenses from "./components/Expenses";
 import NewExpense from "./components/NewExpense";
+import './App.css'
 
 const App = () => {
   const expenses = [
@@ -35,8 +37,9 @@ const App = () => {
     console.log(newExpense);
   }
   return (
-    <div>
+    <div className="bgr">
       <NewExpense onSaveExpenseData={saveExpenseDataHandler}/>
+      <ExpenseFilter/>  
       <Expenses data={expenses}/>
     </div>
   );
