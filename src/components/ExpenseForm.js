@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import './ExpenseForm.css'
 
 function ExpenseForm() {
-    const [enteredTitle, setEnteredTitle] = ueState('');
-    const [enteredAmount, setEnteredAmount] = ueState('');
-    const [enteredDate, setEnteredDate] = ueState('');
+    const [enteredTitle, setEnteredTitle] = useState('');
+    const [enteredAmount, setEnteredAmount] = useState('');
+    const [enteredDate, setEnteredDate] = useState('');
 
     // const [userInput, setUserInput] = userState({
     //     enteredTitle: '',
@@ -13,35 +14,45 @@ function ExpenseForm() {
 
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value);
-        
+
         // *** using objects for multiple state ***
         // setUserInput({
         //     ...userInput,
         //     enteredTitle: event.target.value
         // })
-        
+
         // *** Good approach to multiple state ***
         // setUserInput((prevState) => {
         //     return { ...prevState, enteredTitle: event.target.value }
         // })
     };
     const amountChangeHandler = (event) => {
-        setEnteredTitle(event.target.value);
+        setEnteredAmount(event.target.value);
         // setUserInput({
         //     ...userInput,
         //     enteredAmount: event.target.value
         // })
     };
     const dateChangeHandler = (event) => {
-        setEnteredTitle(event.target.value);
+        setEnteredDate(event.target.value);
         // setUserInput({
         //     ...userInput,
         //     enteredDate: event.target.value
         // })
     };
+    const submitHandler = (e) => {
+        e.preventDefault();
+        
+        const expenseData = {
+            title: enteredTitle,
+            amount: enteredAmount,
+            date: new Date(enteredDate)
+        }
+        console.log(expenseData);
+    }
 
     return (
-        <form>
+        <form onSubmit={submitHandler}>
             <div className='new-expense__controls'>
                 <div className='new-expense__control'>
                     <label>Title</label>
