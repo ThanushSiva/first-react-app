@@ -21,3 +21,10 @@ Handling form submission\
 two way binding\
 child to parent communication\
 Lifting the state up
+
+# Rendering Lists & Conditional content
+Rendering lists of data\
+Keys\
+Outputting conditiona content\
+Adding charts\
+Adding dynamic styles
